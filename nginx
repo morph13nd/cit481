@@ -1,0 +1,11 @@
+sudo apt update
+sudo apt upgrade -y
+sudo apt install nginx
+sudo ufw app list
+sudo ufw allow 'Nginx HTTP'
+    systemctl status nginx
+'backup this site
+ cd /etc/nginx/sites-available
+ sudo mv default default.reference
+
+ NGINX is difficult to configure with TLS/SSL, and does not easily approve of blank server names in the configuration file.
