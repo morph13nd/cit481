@@ -1,5 +1,5 @@
 127.0.0.1 localhost
-127.0.0.1 52.53.131.243 chat
+127.0.0.1 [public ip] chat
 
 # The following lines are desirable for IPv6 capable hosts
 ::1 ip6-localhost ip6-loopback
