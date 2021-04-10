@@ -5,6 +5,14 @@
 
 This is our documentation for how we have been deploying and completing our project. This includes operational activities to technical activities that we are able to describe. Sometimes, there may be dragons that we cannot catch and document. But we do our best.
 
+### Project and operational activities
+
+Projects are carried out as a means of achieving the strategic objectives of our group and are considered beyond the normal operation of the group. We are making a Rocket Chat instance. However, operations are the ongoing and routine activities included in the core project of our group. This includes work such as git management, task management, testing production, resource delivery, automation etc. As such, operations encompass all of "normal" group functions.
+
+### Support or Contact
+
+Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+
 ```markdown
 Syntax highlighted code block
 
@@ -25,10 +33,3 @@ Syntax highlighted code block
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/themaverick/cit481/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
