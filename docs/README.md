@@ -1,5 +1,5 @@
 # Documentation for Oliver and his Olivers
-## by David, Kyle, Marshall and Oliver for CIT 481 Cal State Northridge
+## by David, Kyle, Marshall and Oliver for CIT 481 Cal State Northridge, 2021
 
 ### About
 
