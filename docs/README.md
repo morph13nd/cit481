@@ -1,9 +1,9 @@
-## Documentation for Oliver and his Olivers
-by David, Kyle, Marshall and Oliver for CIT 481 Cal State Northridge
+# Documentation for Oliver and his Olivers
+## by David, Kyle, Marshall and Oliver for CIT 481 Cal State Northridge
 
-### Markdown
+### About
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+This is our documentation for how we have been deploying and completing our project. This includes operational activities to technical activities that we are able to describe. Sometimes, there may be dragons that we cannot catch and document. But we do our best.
 
 ```markdown
 Syntax highlighted code block
