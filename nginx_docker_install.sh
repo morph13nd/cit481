@@ -18,4 +18,6 @@ sudo usermod -aG docker ${USER}
  sudo chmod +x /usr/local/bin/docker-compose
 
 echo 'Run "docker --version" to check installation for Docker'
-echo 'Exit SSH session and re-enter for changes to take effect"
+echo 'Exit SSH session and re-enter for changes to take effect'
+
+exit 0
