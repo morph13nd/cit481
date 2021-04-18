@@ -20,4 +20,12 @@ sudo usermod -aG docker ${USER}
 echo 'Run "docker --version" to check installation for Docker'
 echo 'Exit SSH session and re-enter for changes to take effect'
 
+#Store public IP in an environment variable
+PUBLICIP="$(dig +short myip.opendns.com @resolver1.opendns.com)"
+export PUBLICIP
+
+#Saves variable permanently
+sudo touch /etc/profile.d/public_ip.sh
+echo "export PUBLICIP="$(dig +short myip.opendns.com @resolver1.opendns.com)"" >> /etc/profile.d/public_ip.sh
+
 exit 0
