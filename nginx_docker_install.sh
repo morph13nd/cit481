@@ -3,7 +3,7 @@
 #startup script to install nginx, docker, and docker-compose
 
 sudo apt-get -y update
-sudo apt-get install nginx
+sudo apt-get -y install nginx
 sudo systemctl restart nginx; wait 5; curl localhost
 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
