@@ -27,5 +27,6 @@ export PUBLICIP
 #Saves variable permanently
 sudo echo "export PUBLICIP="$(dig +short myip.opendns.com @resolver1.opendns.com)"" >> temp
 sudo mv temp /etc/profile.d/public_ip.sh
+source ~./bashrc
 
 exit 0
