@@ -30,6 +30,10 @@ git clone https://github.com/themaverick/cit481.git
 cd cit481
 sudo mv docker-compose.yml /opt/docker/rocket.chat/docker-compose.yml
 
+sudo mv /etc/nginx/sites-available/default /etc/nginx/sites-available/default.original
+sudo mv default /etc/nginx/sites-available/default
+sudo systemctl restart nginx
+
 cd /opt/docker/rocket.chat
 sudo docker-compose up -d
 echo "PLEASE WAIT, INITIALIZING CONTAINERS..."
