@@ -1,0 +1,73 @@
+
+- hosts: all
+  tasks:
+    - name: "Apt-Get Update"
+      apt:
+         update-chache: yes
+
+    - name: "Install Nginx"
+      apt:
+        name: ['nginx']
+        state: latest
+
+    - name: "Start Nginx"
+      service:
+          name: nginx
+          state: started
+
+    - name: "Restart Nginx"
+      service: 
+        name: nginx 
+        state: restarted 
+        enabled: yes
+
+    - name: "Add-Apt-Key"
+      ansible.builtin.apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: "Add-Apt-Repository"
+      ansible.builtin.apt_repository:
+        repo: deb [arch=amd64] https://download.docker.com/{{ ansible_system | lower }}/{{ ansible_distribution | lower }} {{ ansible_distribution_release }} stable
+        state: present
+
+    - name: "Install Docker"
+      apt:
+        name: "{{item}}"
+        state: latest
+        update_cache: yes
+      loop:
+        - docker-ce
+        - docker-ce-cli
+        - containerd.io
+
+    - name: "Install Docker Compose"
+      get_url:
+        url: "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-Linux-x86_64"
+        dest: "/usr/local/bin/docker-compose"
+        mode: 0755
+
+    - name: Git checkout
+      ansible.builtin.git:
+        repo: 'https://github.com/themaverick/cit481.git'
+        dest: '~/'
+        version: release-0.22
+
+    - name: Move files from GitHub
+      ansible.builtin.shell:
+              cmd: mv '~/cit481/docker-compose.yml' '/opt/docker/rocket.chat/docker-compose.yml'
+              cmd: mv '/etc/nginx/sites-available/default' '/etc/nginx/sites-available/default.original'
+              cmd: mv "~/cit481/defeault" '/etc/nginx/sites-available/default'
+              cmd: ansible-galaxy collection install community.docker
+
+    - name: Restart Nginx
+      service:
+        name: nginx
+        state: restarted
+        enabled: yes
+
+    - name: Docker-Compose Up
+      community.docker.docker_compose:
+        project_src: /opt/docker/rocket.chat
+        build: no
+      register: output
