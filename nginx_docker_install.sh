@@ -20,12 +20,20 @@ sudo usermod -aG docker ${USER}
 echo 'Run "docker --version" to check installation for Docker'
 echo 'Exit SSH session and re-enter for changes to take effect'
 
-#Store public IP in an environment variable
-PUBLICIP="$(dig +short myip.opendns.com @resolver1.opendns.com)"
-export PUBLICIP
-
 #Saves variable permanently
 echo "export PUBLICIP="$(dig +short myip.opendns.com @resolver1.opendns.com)"" >> temp.sh
-source temp.sh
+
+sudo mkdir -p /opt/docker/rocket.chat/data/runtime/db
+sudo mkdir -p /opt/docker/rocket.chat/data/dump
+
+git clone https://github.com/themaverick/cit481.git
+cd cit481
+sudo mv docker-compose.yml /opt/docker/rocket.chat/docker-compose.yml
+
+cd /opt/docker/rocket.chat
+sudo docker-compose up -d
+echo "PLEASE WAIT, INITIALIZING CONTAINERS..."
+sleep 30
+
 
 exit 0
