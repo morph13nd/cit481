@@ -16,7 +16,7 @@
        - ./uploads:/app/uploads
      environment:
        - PORT=3000
-       - ROOT_URL=http://${LOCALIP}
+       - ROOT_URL=http://44.226.115.133
        - MONGO_URL=mongodb://mongo:27017/rocketchat
        - MONGO_OPLOG_URL=mongodb://mongo:27017/local
      depends_on:
