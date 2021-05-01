@@ -12,7 +12,19 @@ Projects are carried out as a means of achieving the strategic objectives of our
 ###Table of Contents
 
 ## Mental Preparation
-## [Staging your resources](https://github.io/themaverick)
+
+In order to replicate this project, you must possess a basic understanding of:
+
+Networking
+Shells and SSH
+Chat Applications
+Webservers
+Containerization
+Elastic IPs
+SSL/TLS 
+AWS
+
+## Staging your resources
 
 
 ### Support or Contact
