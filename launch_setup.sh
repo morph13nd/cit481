@@ -4,7 +4,11 @@
 
 sudo apt-get -y update
 sudo apt-get -y install nginx
-sudo systemctl restart nginx; wait 5; curl localhost
+sudo systemctl stop nginx
+sudo apt-get -y install certbot
+sudo certbot certonly --standalone --non-interactive --agree-tos --email david.galstyan.182@my.csun.edu -d scarfacegeorge.com
+
+sudo systemctl start nginx; wait 5; curl localhost
 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
