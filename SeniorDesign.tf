@@ -2,7 +2,7 @@
 provider "aws" {
     profile = "default"
     region = "us-east-1"
-    shared_credentials_file = "/home/kallen/.aws/credentials"
+    shared_credentials_file = "C:\Users\KyleA\.aws\credentials"
 }
 
 # Create RocketChat Instance
@@ -15,8 +15,9 @@ resource "aws_instance" "ec2-RocketChat-Host" {
 
 # Create access key pair
 resource "aws_key_pair" "deployer" {
-  key_name   = "RC_Host.pem"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDk9BRmushB5tTFQPneFuP2Iv3wMqLveVGzZQQDotPlxYDc3Yd5bUt0GCUrcduVRznEId7JYa0InoLMKYl04gMicWRgRg1tU4Ch9xmSv/vKz4L5DGYYOkyPV6Sll/uGqaMCEJiuqmhLvuAOFjs5g9YqDQuaZSw7qp+4Xxl71OChCkewdxRxvT0ZW05UgSKChdfntPNu6sS8yMvYmGad1oN6i97pWclB1Y0GHoQrdAvkiTDMmE/TIjZExwOei8BYtIWNHThImI34JJfGy3voPr0M0WC06lt+6dSnx21rfWNK2HNfkRP9p/HdtRafRqELc6RWYdA7PO3awCfpZCK4yRPJvA0JvyTbcy1sDxHw8vtNruv+YuelgMk1Yopc7JH9sX6IWSu5hO0nHqprH7G3mMqKm43qMTmCFgXZHP09VqL43cy3crpCdIjFQdr3D8Gg2TSoUqUKhG+g+PIFukdIklBAwAnnXhoziE9ZSpDb7OBp+lUX6cKvYR6gLpu/fEz0hKU= kallen@BlackPearl"
+  key_name   = "marshall.pem"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC4q8eink4raY/9/6AbHLtmmS7V2wIj1mJwJeEbRBUIpD8j8AOyyGRXj8cVwojnb8A6SL/Y1Drwskjn4F23cyTcn0RXY+39KfGPamy5hGWYyNj2PreHHqy7IpFAvskeXEtdpNIdcwVJd1Up02/w8/yMNLGz0Ya+YpzKFcXm05NbQQRAv9fMcThBcUT3+Q6uACv9zYQmPtu2Tq8xlXEHlFm6noK/j9iOolvltVaaTHGvLJNFpoJosi9me1bHQLwCjFFEIwJysiJGQbhS2kATWXwI/yffoEulGIdyXennzTaLXBde6UGQ3+xKMyUTHVRe/lO5a9jxAGglCEi/QO66BxQWYWMudfczWaHU/unV2l6diPUYn9G1bFIk1AaKsc2D9qBYk1lBG7naSyjHk1mtK+csKy1i12PfdcS92KZW+kqbmdPDy3AATO0c2g+aoNTbyn/qvbeNo/mepxhPvAaieUX7YaiuyTdYl+6jfxUBu5NX37vlr/1m2RihjKTp/Hduno0= KyleA@DESKTOP-K5PTNP9
+"
 }
 
 # Security group and rule to allow ssh in
@@ -33,10 +34,63 @@ resource "aws_security_group" "RocketChat_Host_SG" {
       "23.240.208.179/32"
     ]
   }
+
+  ingress {
+    description = "Marshall SSH"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = [
+      "104.35.82.154/32"
+    ]
+  }
+
+  ingress {
+    description = "David SSH"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = [
+      "23.240.208.179/32"
+    ]
+  }
+
+  ingress {
+    description = "Oliver SSH"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = [
+      "172.98.87.146/32"
+    ]
+  }
+
+  ingress {
+    description = "HTTP IN"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = [
+      "0.0.0.0/0"
+    ]
+  }
+
+ingress {
+    description = "HTTPS IN"
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = [
+      "0.0.0.0/0"
+    ]
+  }
+
   egress {
    from_port = 0
    to_port = 0
    protocol = "-1"
-   cidr_blocks = ["0.0.0.0/0"]
+   cidr_blocks = [
+     "0.0.0.0/0"
+     ]
  }
 } 
