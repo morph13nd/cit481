@@ -1,12 +1,10 @@
 #!/bin/bash
 
-#startup script to install nginx, docker, and docker-compose
+#startup script to install nginx, docker, and more
 
 sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo systemctl stop nginx
-sudo apt-get -y install certbot
-sudo certbot certonly --standalone --non-interactive --agree-tos --email david.galstyan.182@my.csun.edu -d scarfacegeorge.com
 
 sudo systemctl start nginx; wait 5; curl localhost
 
@@ -32,10 +30,16 @@ sudo mkdir -p /opt/docker/rocket.chat/data/dump
 
 git clone https://github.com/themaverick/cit481.git
 cd cit481
+sudo rm /etc/nginx/sites-available/default
+sudo mv ./SSL/default /etc/nginx/sites-available/default
+sudo mv ./SSL/dhparam.pem /etc/ssl/certs/dhparam.pem
+sudo mv ./SSL/nginx-selfsigned.crt /etc/ssl/certs/nginx-selfsigned.crt
+sudo mv ./SSL/nginx-selfsigned.key /etc/ssl/private/nginx-selfsigned.key
+sudo mv ./SSL/self-signed.conf /etc/nginx/snippets/self-signed.conf
+sudo mv ./SSL/ssl-params.conf /etc/nginx/snippets/ssl-params.conf
+
 sudo mv docker-compose.yml /opt/docker/rocket.chat/docker-compose.yml
 
-sudo mv /etc/nginx/sites-available/default /etc/nginx/sites-available/default.original
-sudo mv default /etc/nginx/sites-available/default
 sudo systemctl restart nginx
 
 cd /opt/docker/rocket.chat
