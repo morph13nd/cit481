@@ -14,7 +14,7 @@ HOST [TARGET'S PRIVATE IP]
   IdentityFile [/path/to/pemfile]
   ProxyCommand ssh myBastion -W %h:%p
   
-  #Repeat for as many target machines exist on your VPC
-  #Now if you simply run "ssh [TARGET'S PRIVATE IP]", you will be able to bypass the jumpbox, and log straight into your desired machine
+#Repeat for as many target machines exist on your VPC
+#Now if you simply run "ssh [TARGET'S PRIVATE IP]", you will be able to bypass the jumpbox, and log straight into your desired machine
   
-  #NOTE: Be sure that your VPC subnets do not conflict with your own local network
+#NOTE: Be sure that your VPC subnets do not conflict with your own local network
