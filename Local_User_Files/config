@@ -1,0 +1,20 @@
+#These configurations should be placed in ~/.ssh/config on your LOCAL MACHINE
+#This is to make aliases so that you can easily SSH into your SSH Bastion, or to technically bypass the Bastion
+
+HOST myBastion
+  IdentityFile [/path/to/pemfile]
+  User ubuntu
+  Hostname [PUBLIC IP OF SSH BASTION]
+  
+#Now for the next host, you will want to use the private ip of the host in your VPC you are trying to access
+#For example, if Prometheus is your target machine, enter the private ip of that machine
+
+HOST [TARGET'S PRIVATE IP]
+  User ubuntu
+  IdentityFile [/path/to/pemfile]
+  ProxyCommand ssh myBastion -W %h:%p
+  
+  #Repeat for as many target machines exist on your VPC
+  #Now if you simply run "ssh [TARGET'S PRIVATE IP]", you will be able to bypass the jumpbox, and log straight into your desired machine
+  
+  #NOTE: Be sure that your VPC subnets do not conflict with your own local network
