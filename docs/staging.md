@@ -4,14 +4,19 @@ This document is for all of the staging that is performed beforehand to build th
 
 ### Technological Requirements
 
-1. AWS Account with credits
-2. Terraform
-3. Docker
-4. NGINX
-5. EC2 Instance running Ubuntu 18.04
-6. EC2 CPU and RAM
-7. Firewall
-  
+1. An AWS Educate Account
+2. AWS Account with credits
+3. Terraform
+4. Docker
+5. NGINX
+6. EC2 Instance running Ubuntu 18.04
+7. EC2 CPU and RAM
+8. Firewall
+
+### AWS Educate
+
+AWS Educate aims to train the next generation of cloud computing professionals. Lack of skilled AWS employees, many employers in the future will turn to AWS to find skilled employees. Therefore, AWS created AWS Educate to teach AWS and develop skills for high school and college students. Students can get free tuition, sometimes can use certification credentials, the school system to earn resources, and students can develop projects to improve their AWS skills.
+
 ### AWS Security Groups
 
   You need to configure your AWS security groups. The cloud environment by controlling how traffic is allowed on your EC2 computers. You can use security groups to ensure that all instance-level traffic is only going through your designated ports and protocols. When you start an instance, you need to assign it to a specific security group on Amazon EC2. You can add rules to each security group that allow traffic to or from specific services, including associated instances. Like whitelists, security group rules are always allowed. You cannot create rules that deny access. For example, traffic can come from an Elastic Load Balancer (ELB) to a subnet with web servers. The AWS security group can include this ELB as the only permitted source. Security groups are stateful. So when an incoming request is approved, the outgoing request is also approved. 
