@@ -28,7 +28,12 @@ Create a custom VPC with 1 private and 1 public subnet. The CIDR for the VPC is 
 
 For our scripting portion, we used the bash shell. Computer programs that can be run in the UNIX Shell command line interpreter to process files, run programs and print text are called Shell scripts. Most system management tasks are performed using shell scripts, such as backing up disks and parsing system logs, and are also used as setup scripts for complex programming.  It has a series of commands followed by a shell program containing some parameters that instruct the shell program to perform certain actions. Single command follows commandAnd perform operations, which is why it is called Shell Script. This is useful for repetitive system administration tasks. Bash is the abbreviation of Bourne-Again Shell. The UNIX Shell executes programs in a command line interpreter so that computer programs can use different dialects of the language. The language contains many commands in the text, and these commands are a mixture of different commands.The scripting language is about editing files, running programs and printing text. These scripts are mainly used for administrative tasks on the system. Bash has a calling function, and the appearance can be customized in the script. In addition, they help to install complex programs. This includes user profile copnfigurations like .bashrc.
 
-Attach launch_ssh_setup.sh script to the terraform.
+Just like a command line shell with additional functions, bash is a special part of IEEEPOSIX. The bash shell is widely used in various operating systems, and almost all GNU/Linux systems use standard command line interpreters.It also includes cshell and kshell functions. 
+# Shell: Shell is a macro processor that can be used to execute interactive or non-interactive commands. It is completely based on a graphical user interface, so users can interact with the basic operating system. Allows us to execute commands automatically instead of manually executing code. It mainly reduces manpower and costcarried out. 
+# Kernel: This is the kernel of the operating system, used to communicate with the hardware and the shell for information exchange. 
+# Application: This is a graphical user interface application used by the end user.
+
+  Attach launch_ssh_setup.sh script to the terraform.
   Installs nginx
   Download and install docker
   Download and install docker compose
