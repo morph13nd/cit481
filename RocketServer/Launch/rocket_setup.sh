@@ -38,7 +38,7 @@ sudo mv ./SSL/nginx-selfsigned.key /etc/ssl/private/nginx-selfsigned.key
 sudo mv ./SSL/self-signed.conf /etc/nginx/snippets/self-signed.conf
 sudo mv ./SSL/ssl-params.conf /etc/nginx/snippets/ssl-params.conf
 
-sudo mv docker-compose.yml /opt/docker/rocket.chat/docker-compose.yml
+sudo mv ./RocketServer/Launch/docker-compose.yml /opt/docker/rocket.chat/docker-compose.yml
 
 sudo systemctl restart nginx
 
