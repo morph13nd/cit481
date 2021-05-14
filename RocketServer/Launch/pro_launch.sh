@@ -1,5 +1,8 @@
 #!/bin/bash
 
+
+sudo apt-get -y update
+
 git clone https://github.com/themaverick/cit481.git
 cd cit481
 
