@@ -14,16 +14,11 @@
   
   For each EC2 instance, you can specify up to five security groups for each network interface.  In addition, different security group sets can be assigned to each instance in the VPC subnet. When traffic can reach the instance, Amazon EC2 evaluates all the rules of all assigned security groups. After adding or changing rules, they will be applied automatically.All instances assigned to the security group. With tools such as CloudGuard, you can visualize the cloud security status at the infrastructure level (VPC, security group, EC2 and RDS instances, Amazon S3 bucket, elastic load balancer, etc. ) and identify configuration deviations interactively. Security group and network ACL. Network Access Control List (NACL) is another method of controlling incoming and outgoing traffic in one or more subnets.Unlike AWS security groups, NACL is stateless, so incoming and outgoing rules are evaluated. The network ACL can be configured as an extra layer of security for the VPC.
   
-Allow SSH
-  0.0.0.0/0
+You can feel free to create several security groups. We have one for Rocket Chat, Grafana, Prometheus and our SSH Bastion hosts.
 
-Create a custom VPC with 1 private and 1 public subnet
-CIDR 10.0.0.0/16 for the VPC. 
-Public Subnet is 10.0.1.0/24
-Webserver with rocket chat service, mongoDB containers, and a instance for SSH to connect to the prometheus server.
+### VPCs
 
-Private Subnet 10.0.2.0/24
-Hosts Prometheus
+Create a custom VPC with 1 private and 1 public subnet. The CIDR for the VPC is 10.0.0.0/16. The public subnet is 10.0.1.0/24. Webserver with rocket chat service, mongoDB containers, and a instance for SSH to connect to the prometheus server. The private subnet 10.0.2.0/24 will hosts Prometheus.
 
 Attach launch_ssh_setup.sh script to the terraform
   Installs nginx
