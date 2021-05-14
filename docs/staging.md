@@ -15,7 +15,7 @@ This document is for all of the staging that is performed beforehand to build th
 
 ### AWS Educate
 
-AWS Educate aims to train the next generation of cloud computing professionals. Lack of skilled AWS employees, many employers in the future will turn to AWS to find skilled employees. Therefore, AWS created AWS Educate to teach AWS and develop skills for high school and college students. Students can get free tuition, sometimes can use certification credentials, the school system to earn resources, and students can develop projects to improve their AWS skills.
+AWS Educate aims to train the next generation of cloud computing professionals. Within our class, we are encouraged to us this means of accomplishing our project or purchasing more resources. Due to a lack of skilled AWS employees, many employers in the future will turn to AWS to find skilled employees. Therefore, AWS created AWS Educate to teach AWS and develop skills for high school and college students. Students can get free tuition, sometimes can use certification credentials, the school system to earn resources, and students can develop projects to improve their AWS skills.
 
 ### AWS Security Groups
 
