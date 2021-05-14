@@ -24,4 +24,4 @@ In order to replicate this project, you must possess a basic understanding of:
 7. SSL/TLS 
 8. AWS
 
-### [Staging your resources](https://raw.githubusercontent.com/themaverick/cit481/main/docs/staging.md)
+### [Staging your resources](https://themaverick.github.io/cit481/docs/staging.md)
