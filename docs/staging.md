@@ -27,6 +27,7 @@ You can feel free to create several security groups. We have one for Rocket Chat
 
 ### VPCs
 
+Virtual Private Cloud (VPC) is a private cloud computing environment hosted in a public cloud. Essentially, VPC deploys a logically isolated part of the public cloud to create a virtual private environment. As in all cloud environments, VPC resources can be provided on demand to scale them as needed and are easy to configure.
 Create a custom VPC with 1 private and 1 public subnet. The CIDR for the VPC is 10.0.0.0/16. The public subnet is 10.0.1.0/24. Webserver with rocket chat service, mongoDB containers, and a instance for SSH to connect to the prometheus server. The private subnet 10.0.2.0/24 will hosts Prometheus.
 
 ### The Launch Script
