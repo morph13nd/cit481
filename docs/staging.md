@@ -13,6 +13,10 @@ This document is for all of the staging that is performed beforehand to build th
 7. EC2 CPU and RAM
 8. Firewall
 
+### Docker
+
+Docker is an open source project to automate the delivery of applications such as portable and self-sufficient containers that can be run in the cloud or on-premise. Docker runs on Windows hosts only, and Linux images can run on Linux hosts and Windows hosts (previously using a Linux Hyper-V VM), where host means a server or a VM. Developers can use development environments on Windows, Linux ormacOS On the development computer, the developer runs a Docker host on which the Docker images are deployed, including the application and its dependencies.  Developers working on Linux or macOS use a Linux-based Docker host that can only create images for Linux containers. (Developers working on macOS can edit code or run DockerCLI on macOS. However, at the time of this writing, containers don't run directly on macOS.) Developers working on Windows can create images for Linux or Windows containers. Docker provides Docker Community Edition (CE) for Windows or MacOS to host containers in development environments and to provide additional development tools.
+
 ### AWS Educate
 
 AWS Educate aims to train the next generation of cloud computing professionals. Within our class, we are encouraged to us this means of accomplishing our project or purchasing more resources. Due to a lack of skilled AWS employees, many employers in the future will turn to AWS to find skilled employees. Therefore, AWS created AWS Educate to teach AWS and develop skills for high school and college students. Students can get free tuition, sometimes can use certification credentials, the school system to earn resources, and students can develop projects to improve their AWS skills.
