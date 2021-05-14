@@ -6,7 +6,7 @@ sudo apt-get -y update
 git clone https://github.com/themaverick/cit481.git
 cd cit481
 
-
+sudo mv ./Prometheus/prometheus.yml /etc/Prometheus/prometheus.yml
 
 sudo useradd --no-create-home prometheus
 sudo mkdir /etc/prometheus
