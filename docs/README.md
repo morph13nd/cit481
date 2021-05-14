@@ -9,7 +9,7 @@ This is our documentation for how we have been deploying and completing our proj
 
 Projects are carried out as a means of achieving the strategic objectives of our group and are considered beyond the normal operation of the group. We are making a Rocket Chat instance. However, operations are the ongoing and routine activities included in the core project of our group. This includes work such as git management, task management, testing production, resource delivery, automation etc. As such, operations encompass all of "normal" group functions.
 
-###Table of Contents
+### Table of Contents
 
 ## Mental Preparation
 
