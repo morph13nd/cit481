@@ -38,6 +38,8 @@ Just like a command line shell with additional functions, bash is a special part
 #### Kernel: This is the kernel of the operating system, used to communicate with the hardware and the shell for information exchange. 
 #### Application: This is a graphical user interface application used by the end user.
 
+These are the steps found within the bash script:
+
 -  Attach launch_ssh_setup.sh script to the terraform.
 -  Installs nginx
 -  Download and install docker
