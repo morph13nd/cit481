@@ -1,6 +1,6 @@
 ### About
 
-This document is for all of the staging that is performed beforehand to build the needed infrastructure. 
+This document is for all of the staging that is performed beforehand to build the needed infrastructure, and attempt to speed up and automate the deployment of our infrastructure.
 
 ### Technological Requirements
 
