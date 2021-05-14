@@ -1,3 +1,7 @@
+### About
+
+This document is for all of the staging that is performed beforehand to build the needed infrastructure. 
+
 ### Technological Requirements
 
 1. AWS Account with credits
@@ -20,7 +24,11 @@ You can feel free to create several security groups. We have one for Rocket Chat
 
 Create a custom VPC with 1 private and 1 public subnet. The CIDR for the VPC is 10.0.0.0/16. The public subnet is 10.0.1.0/24. Webserver with rocket chat service, mongoDB containers, and a instance for SSH to connect to the prometheus server. The private subnet 10.0.2.0/24 will hosts Prometheus.
 
-Attach launch_ssh_setup.sh script to the terraform
+### The Launch Script
+
+For our scripting portion, we used the bash shell. Computer programs that can be run in the UNIX Shell command line interpreter to process files, run programs and print text are called Shell scripts. Most system management tasks are performed using shell scripts, such as backing up disks and parsing system logs, and are also used as setup scripts for complex programming.  It has a series of commands followed by a shell program containing some parameters that instruct the shell program to perform certain actions. Single command follows commandAnd perform operations, which is why it is called Shell Script. This is useful for repetitive system administration tasks. Bash is the abbreviation of Bourne-Again Shell. The UNIX Shell executes programs in a command line interpreter so that computer programs can use different dialects of the language. The language contains many commands in the text, and these commands are a mixture of different commands.The scripting language is about editing files, running programs and printing text. These scripts are mainly used for administrative tasks on the system. Bash has a calling function, and the appearance can be customized in the script. In addition, they help to install complex programs. This includes user profile copnfigurations like .bashrc.
+
+Attach launch_ssh_setup.sh script to the terraform.
   Installs nginx
   Download and install docker
   Download and install docker compose
