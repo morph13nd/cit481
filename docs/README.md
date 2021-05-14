@@ -15,14 +15,14 @@ Projects are carried out as a means of achieving the strategic objectives of our
 
 In order to replicate this project, you must possess a basic understanding of:
 
-Networking
-Shells and SSH
-Chat Applications
-Webservers
-Containerization
-Elastic IPs
-SSL/TLS 
-AWS
+1. Networking
+2. Shells and SSH
+3. Chat Applications
+4. Webservers
+5. Containerization
+6. Elastic IPs
+7. SSL/TLS 
+8. AWS
 
 ### Staging your resources
 
