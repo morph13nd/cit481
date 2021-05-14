@@ -91,7 +91,7 @@ resource "aws_security_group" "SSH_Bastion_SG" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["23.240.208.179/32"]
+    cidr_blocks = ["108.185.30.189/32"]
   }
 
   ingress {
