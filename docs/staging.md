@@ -54,7 +54,7 @@ The software stores all data in a time series database, and provides a multi-dim
 
 ### Grafana
 
-Grafana is an open source analysis and visualization software. You can query, view, alert and investigate metrics, no matter where they are stored. In short, it provides you with tools to convert time series database (TSDB) data into beautiful graphs and visualizations. We connected Grafana to the appropriate server so we can generate our visualizations from Prometheus's Node Export application installed on the server we would like to monitor. 
+Grafana is an open source analysis and visualization software. You can query, view, alert and investigate metrics, no matter where they are stored. In short, it provides you with tools to convert time series database (TSDB) data into beautiful graphs and visualizations. We connected Grafana to the appropriate server so we can generate our visualizations from Prometheus's Node Export application installed on the server we would like to monitor on our remote server 10.0.0.5.
 
 ### The Rocket Chat Script
 
