@@ -3,7 +3,7 @@
 
 ## About
 
-This is our documentation for how we have been deploying and completing our project. This includes operational activities to technical activities that we are able to describe. Sometimes, there may be dragons that we cannot catch and document. But we do our best.
+This is our documentation for how we have been deploying and completing our project. Our project is focused on containerizing the RocketChat application and its subcomponents. Afterwards, we will monitor the appliance with Prometheus, Node Exporter and Grafana to look at all the statistics of the server. This includes operational activities to technical activities that we are able to describe. Sometimes, there may be dragons that we cannot catch and document. But we do our best.
 
 ## Project and operational activities
 
