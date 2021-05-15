@@ -1,6 +1,6 @@
 ### About
 
-This document is for all of the staging that is performed beforehand to build the needed infrastructure, and attempt to speed up and automate the deployment of our infrastructure. Our entire infrastructure is deployed through Terraform and scripts that are executed upon specific systems. 
+This document is for all of the staging that is performed beforehand to build the needed infrastructure, and attempt to speed up and automate the deployment of our infrastructure. Our entire infrastructure is deployed through Terraform and scripts that are executed upon specific systems, ultimately forming the environment described in our network diagram. We can track system metrics and performance of our rocket chat server that is hosted live, and rebuild it as many times as needed.
 
 ### Network Diagram
 
