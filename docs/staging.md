@@ -15,11 +15,11 @@ This document is for all of the staging that is performed beforehand to build th
 
 ### Docker
 
-Docker is an open source project to automate the delivery of applications such as portable and self-sufficient containers that can be run in the cloud or on-premise. Docker runs on Windows hosts only, and Linux images can run on Linux hosts and Windows hosts (previously using a Linux Hyper-V VM), where host means a server or a VM. Developers can use development environments on Windows, Linux ormacOS On the development computer, the developer runs a Docker host on which the Docker images are deployed, including the application and its dependencies.  Developers working on Linux or macOS use a Linux-based Docker host that can only create images for Linux containers. (Developers working on macOS can edit code or run DockerCLI on macOS. However, at the time of this writing, containers don't run directly on macOS.) Developers working on Windows can create images for Linux or Windows containers. Docker provides Docker Community Edition (CE) for Windows or MacOS to host containers in development environments and to provide additional development tools.
+Docker is an open source project to automate the delivery of applications such as portable and self-sufficient containers that can be run in the cloud or on-premise. Docker runs on Windows hosts only, and Linux images can run on Linux hosts and Windows hosts (previously using a Linux Hyper-V VM), where host means a server or a VM. Developers can use development environments on Windows, Linux ormacOS On the development computer, the developer runs a Docker host on which the Docker images are deployed, including the application and its dependencies.  Developers working on Linux or macOS use a Linux-based Docker host that can only create images for Linux containers. (Developers working on macOS can edit code or run DockerCLI on macOS. However, at the time of this writing, containers don't run directly on macOS.) Developers working on Windows can create images for Linux or Windows containers. Docker provides Docker Community Edition (CE) for Windows or MacOS to host containers in development environments and to provide additional development tools. We use docker for all of our services that are being hosted. 
 
 ### AWS Educate
 
-AWS Educate aims to train the next generation of cloud computing professionals. Within our class, we are encouraged to us this means of accomplishing our project or purchasing more resources. Due to a lack of skilled AWS employees, many employers in the future will turn to AWS to find skilled employees. Therefore, AWS created AWS Educate to teach AWS and develop skills for high school and college students. Students can get free tuition, sometimes can use certification credentials, the school system to earn resources, and students can develop projects to improve their AWS skills.
+AWS Educate aims to train the next generation of cloud computing professionals. Within our class, we are encouraged to us this means of accomplishing our project or purchasing more resources. Due to a lack of skilled AWS employees, many employers in the future will turn to AWS to find skilled employees. Therefore, AWS created AWS Educate to teach AWS and develop skills for high school and college students. Students can get free tuition, sometimes can use certification credentials, the school system to earn resources, and students can develop projects to improve their AWS skills. We use our AWS educate account with terraform to setup all of our newtworking infrastructure and micro instances of EC2.
 
 ### Terraform
 
@@ -42,7 +42,7 @@ You can feel free to create several security groups. We have one for Rocket Chat
 Virtual Private Cloud (VPC) is a private cloud computing environment hosted in a public cloud. Essentially, VPC deploys a logically isolated part of the public cloud to create a virtual private environment. As in all cloud environments, VPC resources can be provided on demand to scale them as needed and are easy to configure.
 Create a custom VPC with 1 private and 1 public subnet. The CIDR for the VPC is 10.0.0.0/16. The public subnet is 10.0.1.0/24. Webserver with rocket chat service, mongoDB containers, and a instance for SSH to connect to the prometheus server. The private subnet 10.0.2.0/24 will hosts Prometheus.
 
-### The Launch Script
+### The Rocket Chat Script
 
 For our scripting portion, we used the bash shell. Computer programs that can be run in the UNIX Shell command line interpreter to process files, run programs and print text are called Shell scripts. Most system management tasks are performed using shell scripts, such as backing up disks and parsing system logs, and are also used as setup scripts for complex programming.  It has a series of commands followed by a shell program containing some parameters that instruct the shell program to perform certain actions. Single command follows commandAnd perform operations, which is why it is called Shell Script. This is useful for repetitive system administration tasks. Bash is the abbreviation of Bourne-Again Shell. The UNIX Shell executes programs in a command line interpreter so that computer programs can use different dialects of the language. The language contains many commands in the text, and these commands are a mixture of different commands.The scripting language is about editing files, running programs and printing text. These scripts are mainly used for administrative tasks on the system. Bash has a calling function, and the appearance can be customized in the script. In addition, they help to install complex programs. This includes user profile copnfigurations like .bashrc.
 
@@ -51,19 +51,21 @@ Just like a command line shell with additional functions, bash is a special part
 #### Kernel: This is the kernel of the operating system, used to communicate with the hardware and the shell for information exchange. 
 #### Application: This is a graphical user interface application used by the end user.
 
+### The Prometheus Launch Script
+
+Prometheus is an open source system monitoring and warning toolkit originally based on SoundCloud. Since its establishment in 2012, many companies and organizations have adopted Prometheus, and the project has a very active community of developers and users. Prometheus obtains metrics from tool operations directly or through an intermediate staging gateway for short-term operations. Store all locally collected samples and enforce rules on this data to add and record new time series in existing data. Or generate an alert. Grafana or other API users can be used to visualize the collected data. This is why we implemented Grafana.
+
 These are the steps found within the bash script:
 
--  Attach launch_ssh_setup.sh script to the terraform.
--  Installs nginx
--  Download and install docker
--  Download and install docker compose
--  create needed directories for docker log files
--  Clone github repository for the remaining files
--  Move docker compose YAML file to appropriate dir
--  Replace the default NGINX configuration files with our updated files
--  Execute docker compose to initilzie mongodb and rocketchat containers
--  Process can take roughly around 5 to 10 minutes
-  
+-  Attach pro_launch.sh script to the terraform
+-  Download the provided files such as the service file and the YAML file
+-  Download and install prometheus
+-  Stage prometheus service account
+-  Stage prometheus 
+-  Configure the service
+-  Test the service
+
+
   ### Support or Contact
 
 Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
