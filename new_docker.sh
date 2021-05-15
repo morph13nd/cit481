@@ -5,4 +5,4 @@ sudo docker pull cit481/mongodb:latest
 sudo docker stop rocketchat_mongo_1
 sudo docker system prune -a
 sudo docker run --expose 27017 -itd cit481/mongodb:latest /bin/bash
-docker-compose up -d
+sudo docker-compose up -d
