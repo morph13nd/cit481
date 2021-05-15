@@ -19,8 +19,8 @@ sudo cp prometheus-2.19.0.linux-amd64/promtool /usr/local/bin/
 sudo cp -r prometheus-2.19.0.linux-amd64/consoles /etc/prometheus
 sudo cp -r prometheus-2.19.0.linux-amd64/console_libraries /etc/prometheus
 sudo cp prometheus-2.19.0.linux-amd64/promtool /usr/local/bin/
-sudo mv ./Prometheus/prometheus.yml /etc/Prometheus/prometheus.yml
-sudo mv ./Prometheus/prometheus.service /etc/Prometheus/prometheus.service
+sudo mv ./Prometheus/prometheus.yml /etc/prometheus/prometheus.yml
+sudo mv ./Prometheus/prometheus.service /etc/prometheus/prometheus.service
 rm -rf prometheus-2.19.0.linux-amd64.tar.gz prometheus-2.19.0.linux-amd64
 
 
