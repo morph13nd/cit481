@@ -65,6 +65,19 @@ Just like a command line shell with additional functions, bash is a special part
 #### Kernel: This is the kernel of the operating system, used to communicate with the hardware and the shell for information exchange. 
 #### Application: This is a graphical user interface application used by the end user.
 
+These are the steps found within the bash script:
+
+-  Attach launch_ssh_setup.sh script to the terraform.
+-  Installs nginx
+-  Download and install docker
+-  Download and install docker compose
+-  create needed directories for docker log files
+-  Clone github repository for the remaining files
+-  Move docker compose YAML file to appropriate dir
+-  Replace the default NGINX configuration files with our updated files
+-  Execute docker compose to initilzie mongodb and rocketchat containers
+-  Process can take roughly around 5 to 10 minutes
+
 ### The Prometheus Launch Script
 
 Prometheus is an open source system monitoring and warning toolkit originally based on SoundCloud. Since its establishment in 2012, many companies and organizations have adopted Prometheus, and the project has a very active community of developers and users. Prometheus obtains metrics from tool operations directly or through an intermediate staging gateway for short-term operations. Store all locally collected samples and enforce rules on this data to add and record new time series in existing data. Or generate an alert. Grafana or other API users can be used to visualize the collected data. This is why we implemented Grafana.
