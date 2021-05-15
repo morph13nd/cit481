@@ -42,6 +42,9 @@ sudo mv docker-compose.yml /opt/docker/rocket.chat/docker-compose.yml
 
 sudo systemctl restart nginx
 
+sudo chmod +x Node-Exporter.sh
+sh ./Node-Exporter.sh
+
 cd /opt/docker/rocket.chat
 sudo docker-compose up -d
 echo "PLEASE WAIT, INITIALIZING CONTAINERS..."
