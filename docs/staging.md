@@ -13,8 +13,6 @@ This document is for all of the staging that is performed beforehand to build th
 7. Prometheus
 8. Grafana
 9. EC2 Instance running Ubuntu 18.04
-10. EC2 CPU and RAM
-
 
 
 ### AWS Educate
@@ -49,6 +47,14 @@ Docker is an open source project to automate the delivery of applications such a
 ### NGINX Web Server
 
 Nginx, pronounced "engine x", is a free, open source, high-performance HTTP server and open source reverse proxy that can handle the load on some of the largest websites on the Internet.  It can be used as a standalone web server or Apache reverse proxy. And other web servers. If you are a developer or system administrator, you may use Nginx on a regular basis. When using the Nginx web server, starting, stopping, and restarting/restarting are the most common tasks. This is where we are hosting our application for rocket chat. 
+
+### Prometheus
+
+The software stores all data in a time series database, and provides a multi-dimensional data model and a powerful query language to generate controlled resource reports.  Extract metrics from HTTP endpoints. Since Prometheus shares data about itself in the same way, it can also grab and control its own state. Although a Prometheus server that only collects data about itself is not very useful, this is a good example of getting started. We used this in the YAML file. Please see the launch script to setup Prometheus on the T2 Micro instance.
+
+### Grafana
+
+Grafana is an open source analysis and visualization software. You can query, view, alert and investigate metrics, no matter where they are stored. In short, it provides you with tools to convert time series database (TSDB) data into beautiful graphs and visualizations.
 
 ### The Rocket Chat Script
 
