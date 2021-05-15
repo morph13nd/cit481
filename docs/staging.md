@@ -15,8 +15,9 @@ This document is for all of the staging that is performed beforehand to build th
 5. Docker
 6. NGINX
 7. Prometheus
-8. Grafana
-9. EC2 Instance running Ubuntu 18.04
+8. Node Exporter
+9. Grafana
+10. EC2 Instance running Ubuntu 18.04
 
 
 ### AWS Educate
@@ -79,6 +80,10 @@ Nginx, pronounced "engine x", is a free, open source, high-performance HTTP serv
 ### Prometheus
 
 The software stores all data in a time series database, and provides a multi-dimensional data model and a powerful query language to generate controlled resource reports.  Extract metrics from HTTP endpoints. Since Prometheus shares data about itself in the same way, it can also grab and control its own state. Although a Prometheus server that only collects data about itself is not very useful, this is a good example of getting started. We used this in the YAML file. Please see the launch script to setup Prometheus on the T2 Micro instance.
+
+### Node Exporter
+
+The Node Exporter is an application that runs on a node and can collect various metrics such as storage, disk I / O, and more.An endpoint is also made available, which the Prometheus server scrapes off at regular intervals and collects the metrics. Note that any non-root mount points you want to monitor must be provided by binding in the container Start the host monitoring container and supply the path.rootfs argument.  This argument must match the path in bind-mount.
 
 ### Grafana
 
