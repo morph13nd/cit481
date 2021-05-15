@@ -4,7 +4,7 @@ This document is for all of the staging that is performed beforehand to build th
 
 ### Network Diagram
 
-![NetworkDiagram](https://github.com/themaverick/cit481/blob/main/docs/Oliver%20and%20his%20Olives%20Network%20Diagram.png)
+![NetworkDiagram](https://i.imgur.com/niNgCkQ.png)
 
 ### Technological Requirements
 
