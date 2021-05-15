@@ -35,7 +35,6 @@ sudo chown -R prometheus:prometheus /var/lib/prometheus
 #Configure prometheus service
 sudo systemctl daemon-reload
 
-exit 0
 sudo systemctl enable prometheus
 sudo systemctl start prometheus
 
