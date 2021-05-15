@@ -31,24 +31,6 @@
      volumes:
        - ./data/runtime/db:/data/db
        - ./data/dump:/dump
-       
-    cadvisor:
-     image: gcr.io/google-containers/cadvisor:latest
-     container_name: cadvisor
-     ports:
-      - 8080:8080
-     volumes:
-      - /:/rootfs:ro
-      - /var/run:/var/run:rw
-      - /sys:/sys:ro
-      - /var/lib/docker/:/var/lib/docker:ro
-     depends_on:
-      - redis
-   redis:
-     image: redis:latest
-     container_name: redis
-     ports:
-      - 6379:6379
 
    # this container's job is just to run the command to initialize the replica set.
    # it will run the command and remove himself (it will not stay running)
