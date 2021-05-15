@@ -44,6 +44,30 @@ With IAC, developers can code the infrastructure in an automated, accelerated, a
 
 Most other IaC tools can be used with a single cloud provider to Middleware upgrade or new storage server. The danger of variable infrastructure is configuration drift: as changes accumulate, the actual deployment of various servers or other infrastructure elements will further deviate from the original configuration, making it difficult to diagnose and fix errors or performance issues. Immutable infrastructure, which means that whenever the environment changes, the new configuration will be replaced with a new configuration that takes this change into account, and the infrastructure will be replaced. In addition, you can save previous configurations as a version to roll back them if necessary or needed.
 
+#### Terraform's critical role in our project:
+
+- Works on the AWS educate account US-east-1 region
+- The overrall infrastructure is built upon a VPC called "RocketVPC"
+- 2 subnets, 1 public and 1 private
+- We have to setup an internet gateway for the VPC
+- We have to setup our routing table so each node can pass traffic
+- We need a route table association for the public subnet
+- From here we have NAT gateway that is working for the private subnet to go into the NAT gateway in the public subnet so the private subnet can communicate with the internet for updates, downloads and more
+- We have our elastic IP associations that are pre-made in the GUI due to dependencies in the URL that creates 3 elastic IPs for the public machines
+- We create instances (4 nodes) running Ubuntu 18.04 on the US-east region and our main server is running on a T2 medium
+- All other instances run on T2 micro for cost purposes
+- All machines in the public subnet include: Rocket Chat, SSH Bastion, and a Grafana instance
+- The private subnet includes our Prometheus server alone as demonstrated in the image earlier in this blog post
+- Our IP addressing scheme is pre-determined
+- Our security groups are formed for each machine with a unqiue security group
+- Rocket chat allows HTTP/S traffic, and Node Exporter on port 9100 for direct communication with Prometheus
+- SSH traffic is only allowed from within the VPC
+- The bastion is open to our public IPs (we have IP exceptions in place for our IP addresses to access the bastion)
+- The bastion only runs SSH for inbound rules and there are no other methods of accessing the server
+- Each machine on the VPC can only receive SSH inbound from within the VPC, not externally facing
+- Grafana allows traffic from the group public IP addresses and requires port 3000 in the VPC for Grafana
+- Prometheus is on the private subnet and it inaccessible from the public, and uses port 9090 to serve Prometheus, port 9093 foe Alert Manager to be allowed in the subnet
+
 ### Docker
 
 Docker is an open source project to automate the delivery of applications such as portable and self-sufficient containers that can be run in the cloud or on-premise. Docker runs on Windows hosts only, and Linux images can run on Linux hosts and Windows hosts (previously using a Linux Hyper-V VM), where host means a server or a VM. Developers can use development environments on Windows, Linux ormacOS On the development computer, the developer runs a Docker host on which the Docker images are deployed, including the application and its dependencies.  Developers working on Linux or macOS use a Linux-based Docker host that can only create images for Linux containers. (Developers working on macOS can edit code or run DockerCLI on macOS. However, at the time of this writing, containers don't run directly on macOS.) Developers working on Windows can create images for Linux or Windows containers. Docker provides Docker Community Edition (CE) for Windows or MacOS to host containers in development environments and to provide additional development tools. We use docker for all of our services that are being hosted. 
