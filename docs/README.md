@@ -3,7 +3,7 @@
 
 ## About
 
-This is our documentation for how we have been deploying and completing our project. Our project is focused on containerizing the RocketChat application and its subcomponents. Afterwards, we will monitor the appliance with Prometheus, Node Exporter and Grafana to look at all the statistics of the server. This includes operational activities to technical activities that we are able to describe. Sometimes, there may be dragons that we cannot catch and document. But we do our best.
+This is our documentation for how we have been deploying and completing our project. Our project is focused on containerizing the RocketChat application and its subcomponents. Afterwards, we will monitor the appliance with Prometheus, Node Exporter and Grafana to look at all the statistics of the server. We use terraform to automatically build our infrastructure and it calls upon scripts to take care of the rest of the magic. This includes operational activities to technical activities that we are able to describe. Sometimes, there may be dragons that we cannot catch and document. But we do our best.
 
 ## Project and operational activities
 
