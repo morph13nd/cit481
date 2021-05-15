@@ -41,3 +41,5 @@ sudo systemctl start prometheus
 #Run sanity check on prometheus
 sudo promtool check /etc/prometheus/prometheus.yml
 sudo promtool check config /etc/prometheus/prometheus.yml
+
+exit 0
